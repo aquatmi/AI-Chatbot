@@ -1,0 +1,61 @@
+## Natural Language Toolkit: sem3.fcfg
+##
+## Alternative simple grammar with transitive verbs and 
+## quantifiers for the book. 
+## 
+## Author: Ewan Klein <ewan@inf.ed.ac.uk> 
+## URL: <http://nltk.sourceforge.net>
+## For license information, see LICENSE.TXT
+
+## modified by Benjamin Inden, Nottingham Trent University
+
+% start S
+############################
+# Grammar Rules
+#############################
+
+S[SEM = <?subj(?vp)>] -> NP[NUM=?n,SEM=?subj] VP[NUM=?n,SEM=?vp]
+
+NP[NUM=?n,SEM=<?det(?nom)> ] -> Det[NUM=?n,SEM=?det]  Nom[NUM=?n,SEM=?nom]
+NP[LOC=?l,NUM=?n,SEM=?np] -> PropN[LOC=?l,NUM=?n,SEM=?np]
+
+Nom[NUM=?n,SEM=?nom] -> N[NUM=?n,SEM=?nom]
+
+VP[NUM=?n,SEM=?v] -> IV[NUM=?n,SEM=?v]
+VP[NUM=?n,SEM=<?v(?obj)>] -> TV[NUM=?n,SEM=?v] NP[SEM=?obj]
+VP[NUM=?n,SEM=<?v(?obj,?pp)>] -> DTV[NUM=?n,SEM=?v] NP[SEM=?obj] PP[+TO,SEM=?pp]
+
+PP[+TO, SEM=?np] -> P[+TO] NP[SEM=?np]
+
+#############################
+# Lexical Rules
+#############################
+
+PropN[-LOC,NUM=sg,SEM=<\P.P(garage1)>] -> 'garage1'
+PropN[-LOC,NUM=sg,SEM=<\P.P(garage2)>] -> 'garage2'
+PropN[-LOC,NUM=sg,SEM=<\P.P(garage3)>] -> 'garage3'
+PropN[-LOC,NUM=sg,SEM=<\P.P(garage4)>] -> 'garage4'
+
+Det[NUM=sg,SEM=<\P Q.all x.(P(x) -> Q(x))>] -> 'every'
+Det[NUM=pl,SEM=<\P Q.all x.(P(x) -> Q(x))>] -> 'all'
+Det[SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'some'
+Det[NUM=sg,SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'a'
+Det[NUM=sg,SEM=<\P Q.exists x.(P(x) & Q(x))>] -> 'an'
+
+N[NUM=pl,SEM=<\x.ferrari(x)>] -> 'ferraris'
+N[NUM=sg,SEM=<\x.ferrari(x)>] -> 'ferrari'
+N[NUM=pl,SEM=<\x.citroen(x)>] -> 'citroens'
+N[NUM=sg,SEM=<\x.citroen(x)>] -> 'citroen'
+N[NUM=pl,SEM=<\x.kia(x)>] -> 'kias'
+N[NUM=sg,SEM=<\x.kia(x)>] -> 'kia'
+N[NUM=pl,SEM=<\x.honda(x)>] -> 'hondas'
+N[NUM=sg,SEM=<\x.honda(x)>] -> 'honda'
+N[NUM=pl,SEM=<\x.ford(x)>] -> 'fords'
+N[NUM=sg,SEM=<\x.ford(x)>] -> 'ford'
+
+TV[NUM=sg,SEM=<\X x.X(\y.be_in(x,y))>,TNS=pres] -> 'is_in'
+TV[NUM=pl,SEM=<\X x.X(\y.be_in(x,y))>,TNS=pres] -> 'are_in'
+DTV[NUM=sg,SEM=<\Y X x.X(\z.Y(\y.give(x,y,z)))>,TNS=pres] -> 'gives'
+DTV[NUM=pl,SEM=<\Y X x.X(\z.Y(\y.give(x,y,z)))>,TNS=pres] -> 'give'
+
+P[+to] -> 'to'

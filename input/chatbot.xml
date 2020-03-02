@@ -133,7 +133,12 @@
     <!-- HELP -->
     <category>
         <pattern>HELP</pattern>
-        <template>Just ask me something and i'll help you out! Or say "Identify" if you want me to tell you what a sign is!</template>
+        <template>Just ask me something and i'll help you out! Or say "Identify" if you want me to tell you what a sign is! Type "Toy world help" for help with that!</template>
+    </category>
+
+    <category>
+        <pattern>TOY WORLD HELP</pattern>
+        <template>$toy_world_help</template>
     </category>
 
     <!-- IDENTIFY IMAGE-->
@@ -196,16 +201,42 @@
     </category>
 
 
-    <!-- FUTURE DEVELOPMENTS -->
+    <!-- TOY WORLD -->
     <category>
-        <pattern>CAN YOU IDENTIFY THIS ROAD SIGN FOR ME</pattern>
-        <template>Not at the moment, but I will be able to eventually!</template>
+        <pattern> PARK * IN * </pattern>
+        <template>$0%<star index="1"/>%<star index="2"/></template>
     </category>
 
     <category>
-        <pattern>CAN YOU ASK ME A QUESTION ABOUT ROAD SAFETY</pattern>
-        <template>Ok; When will the Road Safety Quiz be implemented? Answer: Not Yet!</template>
+        <pattern> IS * IN * </pattern>
+        <template>$1%<star index="1"/>%<star index="2"/></template>
     </category>
+
+    <category>
+        <pattern> WHAT IS IN * </pattern>
+        <template>$2%<star index="1"/></template>
+    </category>
+
+    <category>
+        <pattern> SET * NUMBERPLATE *</pattern>
+        <template>$3%<star index="1"/>%<star index="2"/></template>
+    </category>
+
+    <category>
+        <pattern> SET * NUMBER PLATE *</pattern>
+        <template>$3%<star index="1"/>%<star index="2"/></template>
+    </category>
+
+    <category>
+        <pattern>GET * NUMBERPLATE</pattern>
+        <template>$4%<star index="1"/></template>
+    </category>
+
+    <category>
+        <pattern>GET * NUMBER PLATE</pattern>
+        <template>$4%<star index="1"/></template>
+    </category>
+
 
 
     <!-- IF NO SET RESPONSE -->

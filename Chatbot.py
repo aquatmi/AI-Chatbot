@@ -12,15 +12,19 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from chatbot_functions import *  # my custom functions, I like to have them separate for tidiness
+from toy_world_functions import *
 
 warnings.filterwarnings('ignore')
 
 # GLOBALS
 IS_CHATTING = True
 BYE_MESSAGE = 'Bye! Remember to wear your seat belt!'
-MESSAGE_1 = "Hello, I'm Willow, the Road Safety Chat-Bot!"
-MESSAGE_2 = 'If you want to know something, ask me!'
-MESSAGE_3 = 'Or if you want me to identify a sign say: "identify"'
+ERROR_MESSAGE = "I think I misunderstood you, did you misspell something?"
+INTRO_MESSAGES = [
+    "Hello, I'm Willow, the Road Safety Chat-Bot!",
+    'If you want to know something, ask me!',
+    'Or if you want me to identify a sign say: "identify"',
+    'Remember, you can always say "Help" if you need it']
 PUNCTUATION = dict((ord(punctuation), None) for punctuation in string.punctuation)
 STOP_WORDS = set(stopwords.words('english'))
 MODEL = load_model()
@@ -52,10 +56,10 @@ overall_document = overall_document.lower()
 
 overall_document_sentences = sent_tokenize(overall_document)
 
+
 # INTRO
-print(MESSAGE_1)
-print(MESSAGE_2)
-print(MESSAGE_3)
+for message in INTRO_MESSAGES:
+    print(message)
 
 # LOOP
 while IS_CHATTING:
@@ -65,8 +69,29 @@ while IS_CHATTING:
         agent = 'aiml'
         if agent == 'aiml':
             response = kernel.respond(user_input)
-
-        if response == user_input.translate(PUNCTUATION):
+        if response[:1] == '$':
+            if response == '$toy_world_help':
+                toy_world_helper()
+            else:
+                response = response[1:].split('%')
+                ########################################
+                # FUNCTIONS FOR THIS SECTION ARE FOUND #
+                #  IN THE TOY_WORLD_FUNCTIONS.PY FILE  #
+                ########################################
+                try:
+                    if response[0] == '0':      # PARK * IN *
+                        park_car(response, car_counter)
+                    if response[0] == '1':      # IS * IN *
+                        check_for_car(response)
+                    if response[0] == '2':      # WHAT IS IN *
+                        check_garage(response)
+                    if response[0] == '3':      # SET * NUMBERPLATE *
+                        set_plate(response)
+                    if response[0] == '4':      # GET * NUMBERPLATE
+                        get_plate(response)
+                except:
+                    print(ERROR_MESSAGE)
+        elif response == user_input.translate(PUNCTUATION):
             # Process User Input
             overall_document_sentences.append(user_input)
 
