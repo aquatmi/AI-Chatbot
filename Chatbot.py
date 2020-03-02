@@ -1,53 +1,41 @@
-﻿import wikipediaapi
-import numpy as np
-import re
+﻿import re
 import string
 import warnings
 import aiml
-import nltk
+import pickle
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+
 from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import sent_tokenize, word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from chatbot_functions import *  # my custom functions, I like to have them separate for tidiness
+
 warnings.filterwarnings('ignore')
 
-#if you get a nltk error, uncomment this and install
-#nltk.download()
-
-        # Globals
+# GLOBALS
 IS_CHATTING = True
-BYE_MESSAGE = 'Bye! Remember to wear your seatbelt!'
-PUNCTUATION = dict((ord(punct), None) for punct in string.punctuation)
-stopWords = set(stopwords.words('english'))
+BYE_MESSAGE = 'Bye! Remember to wear your seat belt!'
+MESSAGE_1 = "Hello, I'm Willow, the Road Safety Chat-Bot!"
+MESSAGE_2 = 'If you want to know something, ask me!'
+MESSAGE_3 = 'Or if you want me to identify a sign say: "identify"'
+PUNCTUATION = dict((ord(punctuation), None) for punctuation in string.punctuation)
+STOP_WORDS = set(stopwords.words('english'))
+MODEL = load_model()
 
-        # Lemmatization
-lem = WordNetLemmatizer()
 
-        # Functions
-def get_document(page):
-    doc = wiki.page(page)
-    if doc.exists():
-        return str(doc.summary)
-    else:
-        return 'null'
+def normalized_lemmatization(document):
+    return lemmatize(word_tokenize(document.lower().translate(PUNCTUATION)))
 
-def lemmatize(tokens):
-    return [lem.lemmatize(token) for token in tokens]
 
-def normalized_lemmatization(doc):
-    return lemmatize(word_tokenize(doc.lower().translate(PUNCTUATION)))
-
-        # API
-wiki = wikipediaapi.Wikipedia('en') #set up variable and language of wikipedia
-wikipediaapi.log.setLevel(level=wikipediaapi.logging.ERROR)
-
-        # Set Up Kernel
-kernel = aiml.Kernel() 
+# KERNEL
+kernel = aiml.Kernel()
 kernel.setTextEncoding(None)
-kernel.bootstrap(learnFiles="Chatbot.xml")
+kernel.bootstrap(learnFiles="input/chatbot.xml")
 
-        # Build up Document
+# DOCUMENT
 documents = [get_document('traffic sign'), get_document('highway code'), get_document('fingerpost'),
              get_document('road signs in the united kingdom'), get_document('road safety'), get_document('seat belt'),
              get_document('vehicle safety'), get_document('warning sign'),
@@ -62,12 +50,14 @@ overall_document = re.sub(r'\([^)]*\)', '', overall_document)
 overall_document = re.sub(r'\s+', ' ', overall_document)
 overall_document = overall_document.lower()
 
-overall_document_sents = sent_tokenize(overall_document)
+overall_document_sentences = sent_tokenize(overall_document)
 
-        #Intro Text
-print("Hello, I'm Willow, the Road Safety Chat-Bot! What would you like to know?")
+# INTRO
+print(MESSAGE_1)
+print(MESSAGE_2)
+print(MESSAGE_3)
 
-        #Loop
+# LOOP
 while IS_CHATTING:
     try:
         user_input = input(">>> ")
@@ -76,32 +66,39 @@ while IS_CHATTING:
         if agent == 'aiml':
             response = kernel.respond(user_input)
 
-        if response == user_input.translate(PUNCTUATION):    
+        if response == user_input.translate(PUNCTUATION):
             # Process User Input
-            overall_document_sents.append(user_input)
-            
-            word_vects = TfidfVectorizer(tokenizer=normalized_lemmatization, stop_words = stopWords)
-            all_vects = word_vects.fit_transform(overall_document_sents)
-            similar_vects = cosine_similarity(all_vects[-1], all_vects)
-            similar_sents = similar_vects.argsort()[0][-2]
+            overall_document_sentences.append(user_input)
 
-            matching_vects = similar_vects.flatten()
-            matching_vects.sort()
-            answer_vect = matching_vects[-2]
-            overall_document_sents.remove(user_input)
-            
-            if answer_vect == 0:
-                 print('I don\'t know, sorry.')
+            word_vectors = TfidfVectorizer(tokenizer=normalized_lemmatization, stop_words=STOP_WORDS)
+            all_vectors = word_vectors.fit_transform(overall_document_sentences)
+            similar_vectors = cosine_similarity(all_vectors[-1], all_vectors)
+            similar_sentences = similar_vectors.argsort()[0][-2]
+
+            matching_vectors = similar_vectors.flatten()
+            matching_vectors.sort()
+            answer_vector = matching_vectors[-2]
+            overall_document_sentences.remove(user_input)
+
+            if answer_vector == 0:
+                print('I don\'t know, sorry.')
             else:
-                print(overall_document_sents[similar_sents])
-        
-                    
-                
+                print(overall_document_sentences[similar_sentences])
+
+        elif response == "Ok! Let me see!":
+            print(response)
+            image = get_image()
+            if image is None:
+                print('Please give me an image file.')
+            else:
+                predict(MODEL, image)
+
         elif response != BYE_MESSAGE:
             print(response)
-               
+
         else:
             print(response)
             IS_CHATTING = False
+
     except(KeyboardInterrupt, EOFError) as exception:
         break
