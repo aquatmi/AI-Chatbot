@@ -55,6 +55,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -77,29 +89,34 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="93" y="241" key="#Inspections/0.0.1920.1160@0.0.1920.1160" timestamp="1585061278919" />
-    <state x="93" y="241" key="#Notifications" timestamp="1585061400027">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="66" y="0" key="#Notifications" timestamp="1585152362438">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="66" y="0" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1585152362438" />
     <state x="93" y="241" key="#Notifications/0.0.1920.1160@0.0.1920.1160" timestamp="1585061400027" />
     <state x="222" y="299" key="#com.intellij.ide.util.MemberChooser" timestamp="1585075625971">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="222" y="299" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160@0.0.1920.1160" timestamp="1585075625971" />
-    <state width="950" height="218" key="GridCell.Tab.0.bottom" timestamp="1585083113575">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1339" height="238" key="GridCell.Tab.0.bottom" timestamp="1585165724735">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1339" height="238" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585165724735" />
     <state width="950" height="218" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1585083113575" />
-    <state width="950" height="218" key="GridCell.Tab.0.center" timestamp="1585083113575">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1339" height="238" key="GridCell.Tab.0.center" timestamp="1585165724735">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1339" height="238" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585165724735" />
     <state width="950" height="218" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1585083113575" />
-    <state width="950" height="218" key="GridCell.Tab.0.left" timestamp="1585083113575">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1339" height="238" key="GridCell.Tab.0.left" timestamp="1585165724735">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1339" height="238" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585165724735" />
     <state width="950" height="218" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1585083113575" />
-    <state width="950" height="218" key="GridCell.Tab.0.right" timestamp="1585083113575">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1339" height="238" key="GridCell.Tab.0.right" timestamp="1585165724735">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1339" height="238" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585165724735" />
     <state width="950" height="218" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1585083113575" />
     <state width="1362" height="328" key="GridCell.Tab.1.bottom" timestamp="1585066659111">
       <screen x="0" y="0" width="1920" height="1160" />
@@ -117,9 +134,10 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1362" height="328" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" timestamp="1585066659111" />
-    <state x="461" y="222" key="SettingsEditor" timestamp="1585061232786">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="151" y="0" key="SettingsEditor" timestamp="1585152356040">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="151" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585152356040" />
     <state x="461" y="222" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1585061232786" />
     <state x="661" y="403" key="com.intellij.ide.util.TipDialog" timestamp="1585061062545">
       <screen x="0" y="0" width="1920" height="1160" />

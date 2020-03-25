@@ -16,7 +16,7 @@ tf.random.set_seed(1234)
 print('@console: loaded paths')
 
 # CONSTANTS
-MAX_SAMPLES = 25000
+MAX_SAMPLES = 50000
 MAX_LENGTH = 40
 
 
@@ -165,9 +165,8 @@ EPOCHS = 20
 
 model.fit(dataset, epochs=EPOCHS)
 
-with open('input/transformer_model/transformer.json', 'w') as f:
-    f.write(model.to_json())
-model.save_weights('input/transformer_model/transformer_weights.h5')
+
+model.save_weights('transformer_model/transformer_weights.h5')
 
 
 

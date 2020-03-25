@@ -13,7 +13,7 @@ path_to_dataset = 'input\movie_dialog_corpus'
 path_to_movie_lines = os.path.join(path_to_dataset, 'movie_lines.txt')
 path_to_movie_conversations = os.path.join(path_to_dataset, 'movie_conversations.txt')
 
-MAX_SAMPLES = 25000
+MAX_SAMPLES = 50000
 MAX_LENGTH = 40
 
 # CLASSES
