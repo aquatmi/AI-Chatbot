@@ -9,7 +9,7 @@ import re
 tf.random.set_seed(1234)
 
 # DATASET PATH
-path_to_dataset = 'input\movie_dialog_corpus'
+path_to_dataset = 'input/movie_dialog_corpus'
 path_to_movie_lines = os.path.join(path_to_dataset, 'movie_lines.txt')
 path_to_movie_conversations = os.path.join(path_to_dataset, 'movie_conversations.txt')
 

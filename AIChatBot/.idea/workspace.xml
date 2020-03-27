@@ -23,12 +23,61 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\Dominics Stuff\My Documents\GitHub\AI-Chatbot\AIChatBot\chatbot_functions" />
+      <recent name="X:\Dominics Stuff\My Documents\GitHub\AI-Chatbot\AIChatBot" />
+      <recent name="X:\Dominics Stuff\My Documents\GitHub\AI-Chatbot\AIChatBot\input" />
+      <recent name="X:\Dominics Stuff\My Documents\GitHub\AI-Chatbot\AIChatBot\openAI" />
+      <recent name="X:\Dominics Stuff\My Documents\GitHub\AI-Chatbot\AIChatBot\transformer_model" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="X:\Dominics Stuff\My Documents\GitHub\AI-Chatbot\AIChatBot" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="transformer_chatbot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.chatbot">
+    <configuration name="CartPole" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AIChatBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CartPole.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="chatbot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AIChatBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/chatbot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="transformer_chatbot (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AIChatBot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -49,8 +98,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="transformer_chatbot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AIChatBot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="X:\Dominics Stuff\My Documents\GitHub\AI-Chatbot\AIChatBot\transformer_chatbot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.chatbot" />
+        <item itemvalue="Python.CartPole" />
+        <item itemvalue="Python.transformer_chatbot (1)" />
         <item itemvalue="Python.transformer_chatbot" />
       </list>
     </recent_temporary>
@@ -94,30 +167,38 @@
     </state>
     <state x="66" y="0" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1585152362438" />
     <state x="93" y="241" key="#Notifications/0.0.1920.1160@0.0.1920.1160" timestamp="1585061400027" />
+    <state x="696" y="382" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585237402718">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="696" y="382" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1160@0.0.1920.1160" timestamp="1585237402718" />
     <state x="222" y="299" key="#com.intellij.ide.util.MemberChooser" timestamp="1585075625971">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="222" y="299" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1160@0.0.1920.1160" timestamp="1585075625971" />
-    <state width="1339" height="238" key="GridCell.Tab.0.bottom" timestamp="1585165724735">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="740" y="334" key="FileChooserDialogImpl" timestamp="1585311106429">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="740" y="334" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1585311106429" />
+    <state width="1899" height="412" key="GridCell.Tab.0.bottom" timestamp="1585324177827">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1339" height="238" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585165724735" />
-    <state width="950" height="218" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1585083113575" />
-    <state width="1339" height="238" key="GridCell.Tab.0.center" timestamp="1585165724735">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1899" height="412" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1585324177827" />
+    <state width="1899" height="412" key="GridCell.Tab.0.center" timestamp="1585324177827">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1339" height="238" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585165724735" />
-    <state width="950" height="218" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1585083113575" />
-    <state width="1339" height="238" key="GridCell.Tab.0.left" timestamp="1585165724735">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1899" height="412" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1585324177827" />
+    <state width="1899" height="412" key="GridCell.Tab.0.left" timestamp="1585324177827">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1339" height="238" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585165724735" />
-    <state width="950" height="218" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1585083113575" />
-    <state width="1339" height="238" key="GridCell.Tab.0.right" timestamp="1585165724735">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1899" height="412" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1585324177827" />
+    <state width="1899" height="412" key="GridCell.Tab.0.right" timestamp="1585324177827">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1339" height="238" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585165724735" />
-    <state width="950" height="218" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1585083113575" />
+    <state width="1899" height="412" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1585324177827" />
     <state width="1362" height="328" key="GridCell.Tab.1.bottom" timestamp="1585066659111">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>

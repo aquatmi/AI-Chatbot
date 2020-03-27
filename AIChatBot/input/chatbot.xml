@@ -237,7 +237,29 @@
         <template>$4%<star index="1"/></template>
     </category>
 
+    <!-- OPENAI GAMES -->
 
+    <category>
+        <pattern>CHANGE RESPONSE MODE</pattern>
+        <template>%£togglemode</template>
+    </category>
+
+
+    <!-- OPENAI GAMES -->
+    <category>
+        <pattern>PLAY HELP </pattern>
+        <template>$$help</template>
+    </category>
+
+    <category>
+        <pattern>PLAY CARTPOLE</pattern>
+        <template>$$cartpole</template>
+    </category>
+
+    <category>
+        <pattern>PLAY CARTPOLE RISKY</pattern>
+        <template>$$cartpolerisky</template>
+    </category>
 
     <!-- IF NO SET RESPONSE -->
     <category>
