@@ -140,8 +140,8 @@ class CartPoleAgent:
                         return
                 self.replay()
 
-    def test(self, show=True):
-        self.load()
+    def test(self, name, show=True):
+        self.load(name)
         wins = 0
         for e in range(self.EPISODES):
             state = self.env.reset()
@@ -184,5 +184,5 @@ class CartPoleAgent:
 if __name__ == "__main__":
     agent = CartPoleAgent()
     # agent.train()
-    agent.test(show=False)
+    agent.test(agent.FILE_NAME, show=False)
 
